@@ -291,9 +291,9 @@
     <div class="pagina" style="z-index: 5;">
       <div class="contenido_pagina paginaTitulo">
         <h1>🌟 El Viaje del Código 🌟</h1>
-        <h2 class="autor">Por Juan Dev</h2>
-        <p>Bienvenido a esta historia de superación digital. ¡Desliza o haz clic para comenzar!</p>
-        <img class="imagenPortada" src="/api/placeholder/400/320" alt="Portada">
+        <h2 class="autor">Por JuanSucer Dev</h2>
+        <p>Bienvenido a esta historia de superación digital. ¡haz clic para comenzar!</p>
+        <img class="imagenPortada" src="./img/descarga.jpg" alt="Portada">
         <div class="esquina_pagina"></div>
       </div>
     </div>
@@ -302,10 +302,10 @@
       <div class="contenido_pagina">
         <h2>Capítulo 1: El Primer Error</h2>
         <p>Todo comenzó con un simple "SyntaxError". Fue su primer paso en el mundo de la programación. Un mundo lleno de paréntesis, punto y coma, y mucha lógica.</p>
-        <p>Ana nunca olvidaría ese momento. La pantalla negra de la terminal mostraba un mensaje rojo que parecía gritarle. No entendía qué había hecho mal, pero sabía que tenía que resolverlo.</p>
+        <p>El nunca olvidaría ese momento. La pantalla negra de la terminal mostraba un mensaje rojo que parecía gritarle. No entendía qué había hecho mal, pero sabía que tenía que resolverlo.</p>
         <div class="citaBloque">"El error no es fracaso, es una pista."</div>
         <p>Tras horas de investigación, descubrió que solo faltaba un carácter: un simple paréntesis de cierre. Algo tan pequeño había detenido todo su programa.</p>
-        <img src="/api/placeholder/400/320" alt="Código">
+        <img src="./img/SyntaxError.png" alt="Código">
         <div class="numero_pagina">1</div>
         <div class="esquina_pagina"></div>
       </div>
@@ -314,11 +314,11 @@
     <div class="pagina" style="z-index: 3;">
       <div class="contenido_pagina">
         <h2>Capítulo 2: El Código que lo Cambió Todo</h2>
-        <p>Un día, Ana descubrió cómo usar JavaScript para crear vida en una página web. Sus botones cobraban sentido, y sus ideas se transformaban en interfaces.</p>
+        <p>Un día, el descubrió cómo usar JavaScript para crear vida en una página web. Sus botones cobraban sentido, y sus ideas se transformaban en interfaces.</p>
         <p>Había pasado noches enteras aprendiendo los fundamentos, viendo tutoriales y practicando en pequeños proyectos. Pero este era diferente. Este proyecto tenía alma.</p>
         <div class="citaBloque">"Crear es compartir una parte de ti con el mundo."</div>
         <p>Su aplicación ayudaba a personas mayores a conectarse con sus familias. Cada línea de código tenía un propósito, cada función resolvía un problema real.</p>
-        <img src="/api/placeholder/400/320" alt="Creatividad digital">
+        <img src="./img/js.png" alt="Creatividad digital">
         <div class="numero_pagina">2</div>
         <div class="esquina_pagina"></div>
       </div>
@@ -327,11 +327,11 @@
     <div class="pagina" style="z-index: 2;">
       <div class="contenido_pagina">
         <h2>Capítulo 3: Comunidad y Colaboración</h2>
-        <p>El verdadero poder del código no estaba en la sintaxis o en los algoritmos, sino en la comunidad. Ana comenzó a compartir su trabajo en GitHub y a contribuir en proyectos de código abierto.</p>
+        <p>El verdadero poder del código no estaba en la sintaxis o en los algoritmos, sino en la comunidad. el comenzó a compartir su trabajo en GitHub y a contribuir en proyectos de código abierto.</p>
         <p>Pronto, desarrolladores de todo el mundo mejoraban su código, añadían funcionalidades y expandían su visión original.</p>
         <div class="citaBloque">"En la programación, como en la vida, avanzamos más cuando lo hacemos juntos."</div>
         <p>Las discusiones en los foros, los pull requests y las revisiones de código se convirtieron en conversaciones que trascendían fronteras y zonas horarias.</p>
-        <img src="/api/placeholder/400/320" alt="Colaboración">
+        <img src="./img/git.png" alt="Colaboración">
         <div class="numero_pagina">3</div>
         <div class="esquina_pagina"></div>
       </div>
@@ -340,7 +340,7 @@
     <div class="pagina" style="z-index: 1;">
       <div class="contenido_pagina">
         <h2>Gracias por leer</h2>
-        <p>El viaje de Ana continúa cada día, con nuevos retos, nuevos errores y nuevas soluciones. Porque el camino del programador nunca termina.</p>
+        <p>El viaje de Juan continúa cada día, con nuevos retos, nuevos errores y nuevas soluciones. Porque el camino del programador nunca termina.</p>
         <p>Esperamos que esta pequeña historia te inspire a seguir explorando, creando y compartiendo tu código con el mundo.</p>
         <p><strong>Fin del libro 📘</strong></p>
         <p>¿Te gustaría empezar tu propio viaje del código? Recuerda que cada error es una oportunidad para aprender, y cada línea de código es un paso hacia adelante.</p>
@@ -409,14 +409,6 @@
         cambiarTema.textContent = "🌞";
       }
       
-      // Funcionalidad para las esquinas de página
-      esquinasPagina.forEach((esquina, indice) => {
-        esquina.addEventListener("click", () => {
-          if (paginaActual === indice) {
-            siguientePagina();
-          }
-        });
-      });
 
       // Función para ajustar el tamaño según la pantalla
       function ajustarPorTamañoPantalla() {
