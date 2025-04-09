@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #e9e4d5, #d5cfc0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+  }
+
+  .libro {
+    perspective: 2500px;
+    width: 90%;
+    max-width: 800px;
+    height: 90vh;
+    max-height: 600px;
+    position: relative;
+  }
+
+  .pagina {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #fffdf6;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform-origin: left center;
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), 
+                box-shadow 0.3s ease;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    padding: 40px;
+    border-left: 1px solid #e0ddd3;
+  }
+
+  .contenido_pagina {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #6d4c41 #f5f5f5;
+  }
+
+  .contenido_pagina::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .contenido_pagina::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 4px;
+  }
+
+  .contenido_pagina::-webkit-scrollbar-thumb {
+    background-color: #6d4c41;
+    border-radius: 4px;
+  }
+
+  .pagina.volteada {
+    transform: rotateY(-180deg);
+    z-index: 0 !important;
+  }
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #4e342e;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #5d4037;
+    font-size: 1.8rem;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+  }
+
+  .citaBloque {
+    border-left: 4px solid #6d4c41;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: rgba(109, 76, 65, 0.1);
+    font-style: italic;
+    color: #5d4037;
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: block;
+  }
+
+  .botones_control {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .boton {
+    padding: 12px 24px;
+    background-color: #6d4c41;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .boton:hover {
+    background-color: #4e342e;
+    transform: translateY(-2px);
+  }
+
+  .boton:active {
+    transform: translateY(0);
+  }
+
+  .numero_pagina {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-style: italic;
+    color: #8d8d8d;
+  }
+
+  @media (max-width: 768px) {
+    .pagina {
+      padding: 20px;
+    }
+    
+    h1 {
+      font-size: 1.8rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+    
+    .botones_control {
+      bottom: 10px;
+    }
+    
+    .boton {
+      padding: 10px 16px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .libro {
+      height: 85vh;
+    }
+    
+    .pagina {
+      padding: 15px;
+    }
+    
+    .botones_control {
+      gap: 10px;
+    }
+  }
+
+  .paginaTitulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+  }
+
+  .autor {
+    margin-bottom: 30px;
+    font-style: italic;
+  }
+
+  .imagenPortada {
+    max-height: 50%;
+    object-fit: contain;
+    margin-top: 30px;
+  }
+
+  .esquina_pagina {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.05) 50%);
+    border-radius: 0 0 10px 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .esquina_pagina:hover {
+    transform: scale(1.1);
+  }
+
+  .botonCambiarTema {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 15;
+    background: rgba(255, 255, 255, 0.7);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .botonCambiarTema:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  body.modoOscuro {
+    background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+  }
+
+  body.modoOscuro .pagina {
+    background: #2c3e50;
+    color: #e0e0e0;
+    border-left: 1px solid #1a1a2e;
+  }
+
+  body.modoOscuro h1, 
+  body.modoOscuro h2 {
+    color: #eceff1;
+  }
+
+  body.modoOscuro .citaBloque {
+    border-left: 4px solid #b0bec5;
+    background-color: rgba(176, 190, 197, 0.1);
+    color: #cfd8dc;
+  }
+
+  body.modoOscuro .boton {
+    background-color: #455a64;
+  }
+
+  body.modoOscuro .boton:hover {
+    background-color: #546e7a;
+  }
